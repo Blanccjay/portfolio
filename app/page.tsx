@@ -1,65 +1,121 @@
-import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
-export default function Home() {
+export default function Portfolio() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-white text-gray-900 p-6 md:p-12">
+      {/* Hero Section */}
+      <section className="mb-16">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl md:text-6xl font-bold mb-4"
+        >
+          Thant Si Thu
+        </motion.h1>
+        <p className="text-lg md:text-xl max-w-2xl">
+          Cloud Engineer with a strong foundation in Electrical and Electronics Engineering, specializing in AWS, Google Cloud, Kubernetes, and Machine Learning. Passionate about building scalable systems and applying engineering principles to solve real-world problems.
+        </p>
+      </section>
+
+      {/* About Section */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+        <p className="max-w-3xl leading-relaxed">
+          I am an aspiring engineer seeking to further my academic journey through scholarship opportunities. My background combines traditional engineering with modern cloud technologies, allowing me to approach problems from both hardware and software perspectives. I am particularly interested in leveraging cloud computing and machine learning to create efficient, scalable, and intelligent systems.
+        </p>
+      </section>
+
+      {/* Skills Section */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-6">Skills</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {[
+            "AWS",
+            "Google Cloud",
+            "Kubernetes",
+            "Machine Learning",
+            "Electrical Engineering",
+            "Microservices",
+          ].map((skill) => (
+            <Card key={skill}>
+              <CardContent className="p-4 text-center">
+                {skill}
+              </CardContent>
+            </Card>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Education Section */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-6">Education</h2>
+        <div className="space-y-4">
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-semibold">Liverpool John Moores University</h3>
+              <p>BSc Electrical and Electronics Engineering</p>
+              <p className="text-sm text-gray-600">First Class Honours</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-semibold">Auston College (Myanmar)</h3>
+              <p>Higher Diploma in Electrical Technology</p>
+            </CardContent>
+          </Card>
         </div>
-      </main>
+      </section>
+
+      {/* Experience Section */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-6">Work Experience</h2>
+        <div className="space-y-4">
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-semibold">Cloud Engineer</h3>
+              <p>B8 ICT Solutions</p>
+              <p className="text-sm text-gray-600">May 2025 - Present</p>
+              <ul className="list-disc ml-5 mt-2 text-sm">
+                <li>Managed cloud infrastructure using AWS and Kubernetes</li>
+                <li>Designed and maintained microservices architecture</li>
+                <li>Implemented monitoring and deployment solutions</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-semibold">M&E Engineer Intern</h3>
+              <p>Yangon Aerodrome Company Limited</p>
+              <p className="text-sm text-gray-600">Aug 2023 - Oct 2023</p>
+              <ul className="list-disc ml-5 mt-2 text-sm">
+                <li>Assisted in maintenance of electrical systems</li>
+                <li>Supported engineering operations and inspections</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Projects Placeholder */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-4">Projects</h2>
+        <p className="text-gray-600">
+          Projects will be added based on provided documentation.
+        </p>
+      </section>
+
+      {/* Contact Section */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Contact</h2>
+        <p>Email: your.email@example.com</p>
+        <div className="mt-4">
+          <Button>Download CV</Button>
+        </div>
+      </section>
     </div>
   );
 }
