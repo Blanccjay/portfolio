@@ -153,7 +153,7 @@ export default function Portfolio() {
                   Auston College (Myanmar)
                 </h3>
                 <p className="text-zinc-600">
-                  Higher Diploma in Electrical Technology
+                  Higher Diploma in Engineering Technology
                 </p>
               </CardContent>
             </Card>
